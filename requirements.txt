@@ -1,4 +1,1 @@
-os
-dotenv
-telethon
-random
+telethon==1.17.5
