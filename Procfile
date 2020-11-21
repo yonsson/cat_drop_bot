@@ -1,1 +1,1 @@
-bot: python cdb.py
+web: python cdb.py
