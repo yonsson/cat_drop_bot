@@ -15,21 +15,21 @@ def random_catfile():
     number = random.randint(1, 9)
     return(f'cat{number}.jpg')
     
-@bot.on(events.NewMessage(pattern='/start'))
+@bot.on(events.NewMessage(pattern='/start|привет|Привет|hi|Hi'))
 async def start(event):
-    """Send a message when the command /start is issued."""
+    """Send a message when the command /start is issued or user say hi."""
     await event.respond('Привет! Я высылаю случаные картинки котов в ответ на твои сообщения!')
     raise events.StopPropagation
 
 @bot.on(events.NewMessage(pattern='всё|все|Всё|Все|all|All'))
 async def echoall(event):
-    """Echo the user message."""
+    """Echo all drop."""
     await event.respond(message=f'Наташ, проснись, мы всё уронили!', file=random_catfile())
     raise events.StopPropagation
 
 @bot.on(events.NewMessage)
 async def echo(event):
-    """Echo the user message."""
+    """Echo the user message + drop."""
     await event.respond(message=f'Мы уронили {event.text}', file=random_catfile())
         
 
