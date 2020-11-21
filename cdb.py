@@ -1,6 +1,7 @@
 import os
 from telethon import TelegramClient, events
 import random
+import textimage
 
 
 BOT_TOKEN = os.environ['BOT_TOKEN']
@@ -22,13 +23,13 @@ async def start(event):
 @bot.on(events.NewMessage(pattern='всё|все|Всё|Все|all|All'))
 async def echoall(event):
     """Echo all drop."""
-    await event.respond(message=f'Наташ, проснись, мы всё уронили!', file=random_catfile())
+    await event.respond(message=f'Наташ, проснись, мы всё уронили!', file=textimage(random_catfile(), 'Наташ, проснись, мы всё уронили!'))
     raise events.StopPropagation
 
 @bot.on(events.NewMessage)
 async def echo(event):
     """Echo the user message + drop."""
-    await event.respond(message=f'Мы уронили {event.text}', file=random_catfile())
+    await event.respond(message=f'Мы уронили {event.text}', file=textimage(random_catfile(), f'Мы уронили {event.text}'))
         
 
 def main():
