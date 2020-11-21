@@ -1,1 +1,2 @@
 telethon==1.17.5
+Pillow==8.0
