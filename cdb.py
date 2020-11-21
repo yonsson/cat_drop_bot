@@ -12,7 +12,7 @@ API_HASH = os.environ['API_HASH']
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 def random_catfile():
-    number = random.randint(1, 4)
+    number = random.randint(1, 9)
     return(f'cat{number}.jpg')
     
 @bot.on(events.NewMessage(pattern='/start'))
