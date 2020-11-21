@@ -1,9 +1,7 @@
 import os
-#from dotenv import load_dotenv
 from telethon import TelegramClient, events
 import random
 
-#load_dotenv()
 
 BOT_TOKEN = os.environ['BOT_TOKEN']
 API_ID = os.environ['API_ID']
