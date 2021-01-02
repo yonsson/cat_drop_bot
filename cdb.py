@@ -25,6 +25,12 @@ async def echoall(event):
     """Echo all drop."""
     await event.respond(file=textimage.text_to_image(random_catfile(), f'{event.sender.first_name}, проснись, мы всё уронили!'))
     raise events.StopPropagation
+    
+@bot.on(events.NewMessage(pattern='2021|ZOZI|zozi|2K21|2k21|НГ|Новый год|новый год'))
+async def echony(event):
+    """Echo new year"""
+    await event.respond(file=textimage.text_to_image(random_catfile(), 'Мы подняли 2021 год!'))
+    raise events.StopPropagation    
 
 @bot.on(events.NewMessage)
 async def echo(event):
