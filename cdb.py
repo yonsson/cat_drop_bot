@@ -4,7 +4,7 @@ import random
 import textimage
 
 
-BOT_TOKEN = os.environ['BOT_TOKEN']
+BOT_TOKEN = os.environ['BOTTOKEN']
 API_ID = os.environ['API_ID']
 API_HASH = os.environ['API_HASH']
 
