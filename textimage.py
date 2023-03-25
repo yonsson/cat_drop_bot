@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
 import os
 
+
 def text_to_image(image_name, text):
     image = Image.open(image_name)
 
@@ -17,6 +18,7 @@ def text_to_image(image_name, text):
 
     return(image_path)
 
+
 if __name__ == '__main__':
-    testim = Image.open(text_to_image('cat1.jpg', 'тест'))
-    testim.show()
+    test_image = Image.open(text_to_image('cat1.jpg', 'тест'))
+    test_image.show()
