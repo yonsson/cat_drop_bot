@@ -12,8 +12,8 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 
 def random_catfile():
-    number = random.randint(1, 9)
-    return(f'cats/cat{number}.jpg')
+    DIR = 'cats'
+    return os.path.join(DIR, random.choice(os.listdir(DIR)))
 
 
 @bot.on(events.NewMessage(pattern='/start|привет|Привет|hi|Hi'))
